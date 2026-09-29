@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission: Send the Doctor to Georgia ✈️🇬🇪</title>
+    <meta name="description" content="A funny little packing mission for a 4th-year medical student flying to Georgia.">
+    <meta name="theme-color" content="#f8fafc">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Sora', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            blue: '#3b82f6',
+                            light: '#eff6ff',
+                            dark: '#1e3a8a',
+                        },
+                        accent: {
+                            pink: '#f472b6',
+                            lavender: '#a78bfa',
+                            red: '#f87171',
+                            cream: '#fdfbf7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-accent-cream text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-medical-blue selection:text-white">
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden px-4 py-20 text-center">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+            <div class="cloud-1 absolute top-20 left-10 text-4xl">☁️</div>
+            <div class="cloud-2 absolute top-40 right-20 text-5xl">☁️</div>
+            <div class="cloud-3 absolute bottom-40 left-1/4 text-3xl">☁️</div>
+            <div class="airplane absolute top-32 -left-20 text-5xl z-10">✈️</div>
+            <div class="absolute top-1/4 left-1/3 text-2xl animate-float-slow text-accent-pink opacity-50">❤️</div>
+            <div class="absolute bottom-1/3 right-1/4 text-xl animate-float text-medical-blue opacity-50">🩺</div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <h1 class="font-display font-bold text-4xl md:text-6xl text-medical-dark mb-6 tracking-tight fade-in-up">
+                MISSION: SEND THE DOCTOR TO GEORGIA <span class="inline-block">✈️🇬🇪</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed fade-in-up" style="animation-delay: 0.2s;">
+                4th year of medicine starts soon... but first, let's make sure you don't forget half your life at home.
+            </p>
+            
+            <!-- Info Panel -->
+            <div class="glass-card rounded-3xl p-6 md:p-8 w-full max-w-3xl mb-12 shadow-xl fade-in-up" style="animation-delay: 0.4s;">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Destination</p>
+                        <p class="font-display font-semibold text-medical-dark flex items-center gap-2"><span id="hero-destination">Georgia</span> 🇬🇪</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Departure</p>
+                        <p class="font-display font-semibold text-medical-dark flex items-center gap-2"><span id="hero-date">Oct 4, 2026</span> ✈️</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Year</p>
+                        <p class="font-display font-semibold text-medical-dark flex items-center gap-2"><span id="hero-year">4th Year MBBS</span> 🩺</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Mission</p>
+                        <p class="font-display font-semibold text-accent-red flex items-center gap-2">PACKING REQUIRED</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-slate-100">
+                    <div class="flex justify-between items-end mb-2">
+                        <p class="text-sm font-semibold text-slate-600">Probability of forgetting something</p>
+                        <p class="font-display font-bold text-accent-red text-xl">97%</p>
+                    </div>
+                    <div class="w-full bg-slate-100 rounded-full h-3 mb-2 overflow-hidden">
+                        <div class="bg-gradient-to-r from-accent-pink to-accent-red h-3 rounded-full loading-bar w-[97%]"></div>
+                    </div>
+                    <p class="text-xs text-slate-400 text-right">Difficulty: EXTREME 😂</p>
+                </div>
+            </div>
+            
+            <button id="start-mission-btn" class="group bg-medical-dark text-white font-display font-bold text-lg px-8 py-4 rounded-full shadow-lg shadow-medical-blue/30 hover:shadow-xl hover:shadow-medical-blue/40 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 fade-in-up" style="animation-delay: 0.6s;">
+                START THE MISSION 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <p class="text-xs text-slate-400 mt-4 fade-in-up" style="animation-delay: 0.7s;">
+                Made with unnecessary amounts of love, concern and overthinking.
+            </p>
+        </div>
+    </header>
+
+    <!-- Countdown Section -->
+    <section id="countdown-section" class="py-12 px-4 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-gradient-to-br from-medical-dark to-medical-blue rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden text-center transform transition-all duration-500 hover:scale-[1.02]">
+                <!-- decorative background -->
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-accent-pink/20 rounded-full blur-3xl"></div>
+                
+                <h2 class="font-display font-bold text-2xl md:text-3xl mb-8 relative z-10"><span id="cd-name">Doctor</span>, Your Flight Is Coming...</h2>
+                
+                <div id="countdown-timer" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 relative z-10">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+                        <div id="cd-days" class="font-display font-bold text-4xl md:text-5xl mb-1">00</div>
+                        <div class="text-xs font-semibold uppercase tracking-widest text-medical-light">Days</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+                        <div id="cd-hours" class="font-display font-bold text-4xl md:text-5xl mb-1">00</div>
+                        <div class="text-xs font-semibold uppercase tracking-widest text-medical-light">Hours</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+                        <div id="cd-minutes" class="font-display font-bold text-4xl md:text-5xl mb-1">00</div>
+                        <div class="text-xs font-semibold uppercase tracking-widest text-medical-light">Minutes</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
+                        <div id="cd-seconds" class="font-display font-bold text-4xl md:text-5xl mb-1">00</div>
+                        <div class="text-xs font-semibold uppercase tracking-widest text-medical-light">Seconds</div>
+                    </div>
+                </div>
+                
+                <div id="countdown-finished" class="hidden relative z-10 mt-8">
+                    <p class="font-display font-bold text-3xl text-accent-pink">THE MISSION HAS BEGUN ✈️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Progress Bar -->
+    <div id="sticky-progress" class="fixed top-0 left-0 w-full z-50 transform -translate-y-full transition-transform duration-300 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm px-4 py-3">
+        <div class="max-w-4xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex-shrink-0">
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Packing Progress</p>
+                <p class="font-display font-bold text-medical-dark" id="sticky-progress-text">0 / 0 ITEMS</p>
+            </div>
+            <div class="flex-grow max-w-md hidden md:block">
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <div id="sticky-progress-bar-fill" class="bg-medical-blue h-2 rounded-full transition-all duration-500 ease-out w-0"></div>
+                </div>
+            </div>
+            <div class="flex-shrink-0 font-display font-bold text-medical-blue text-xl" id="sticky-progress-pct">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content / Checklist Sections -->
+    <main class="py-12 px-4 max-w-4xl mx-auto space-y-16" id="checklist-container">
+        <!-- JavaScript will inject sections here -->
+    </main>
+
+    <!-- Final Check Section -->
+    <section id="final-check-section" class="py-20 px-4 mt-12 bg-white rounded-t-[3rem] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="font-display font-bold text-4xl md:text-5xl text-medical-dark mb-12">FINAL CHECK, DOCTOR.</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Total Items</p>
+                    <p class="font-display font-bold text-3xl text-slate-700" id="final-total">0</p>
+                </div>
+                <div class="p-4 bg-medical-light rounded-2xl">
+                    <p class="text-xs font-bold text-medical-blue uppercase mb-2">Completed</p>
+                    <p class="font-display font-bold text-3xl text-medical-dark" id="final-completed">0</p>
+                </div>
+                <div class="p-4 bg-accent-pink/10 rounded-2xl">
+                    <p class="text-xs font-bold text-accent-pink uppercase mb-2">Remaining</p>
+                    <p class="font-display font-bold text-3xl text-accent-red" id="final-remaining">0</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-2xl text-white">
+                    <p class="text-xs font-bold text-slate-400 uppercase mb-2">Progress</p>
+                    <p class="font-display font-bold text-3xl" id="final-pct">0%</p>
+                </div>
+            </div>
+
+            <!-- Large Circular Progress -->
+            <div class="relative w-48 h-48 mx-auto mb-12 flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                    <circle class="text-slate-100 stroke-current" stroke-width="8" cx="50" cy="50" r="40" fill="transparent"></circle>
+                    <circle id="final-circle-fill" class="text-medical-blue stroke-current transition-all duration-1000 ease-out" stroke-width="8" stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center flex-col">
+                    <span id="final-circle-text" class="font-display font-bold text-4xl text-medical-dark">0%</span>
+                </div>
+            </div>
+
+            <!-- Export Feature CTA -->
+            <div class="mt-8 mb-16 p-8 bg-slate-50 rounded-3xl border border-slate-100 relative">
+                <h3 class="font-display font-bold text-xl mb-4">Want a copy?</h3>
+                <p class="text-slate-500 mb-6 text-sm">Save a PDF copy or send the final packing list to my email so I can double-check everything.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button id="download-pdf-btn" class="w-full sm:w-auto bg-medical-blue text-white font-semibold py-3 px-6 rounded-xl hover:bg-blue-600 transition-colors inline-flex items-center justify-center gap-2 shadow-lg shadow-medical-blue/20">
+                        DOWNLOAD PDF 📄
+                    </button>
+                    <button id="send-email-btn" class="w-full sm:w-auto bg-slate-800 text-white font-semibold py-3 px-6 rounded-xl hover:bg-slate-900 transition-colors inline-flex items-center justify-center gap-2 shadow-lg shadow-slate-800/20">
+                        SEND EMAIL 📧
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <button id="reset-btn" class="text-sm font-semibold text-slate-400 hover:text-accent-red transition-colors underline decoration-dotted underline-offset-4">
+                RESET CHECKLIST
+            </button>
+            
+            <div class="mt-20">
+                <button id="secret-btn" class="text-xs text-slate-200 hover:text-accent-pink transition-colors cursor-pointer select-none">
+                    DO NOT CLICK
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+
+    <!-- Passport Modal -->
+    <div id="passport-modal" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl transform scale-95 transition-transform duration-300 text-center">
+            <div class="text-6xl mb-6">🛂</div>
+            <h3 class="font-display font-bold text-2xl mb-2 text-medical-dark">PASSPORT?</h3>
+            <p class="text-slate-500 mb-8">This is literally the only thing you absolutely cannot buy there.</p>
+            
+            <div class="space-y-3" id="passport-buttons">
+                <button id="passport-yes" class="w-full bg-medical-light text-medical-dark font-bold py-4 rounded-xl hover:bg-medical-blue hover:text-white transition-colors">
+                    YES, I HAVE IT 😎
+                </button>
+                <button id="passport-no" class="w-full bg-red-50 text-red-600 font-bold py-4 rounded-xl hover:bg-red-100 transition-colors">
+                    WAIT... WHERE IS IT?! 😭
+                </button>
+            </div>
+            
+            <div id="passport-response" class="hidden mt-6">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Food Box Modal -->
+    <div id="food-modal" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-amber-50 border-4 border-amber-200 rounded-3xl p-8 max-w-sm w-full shadow-2xl transform scale-95 transition-transform duration-300 text-center relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 text-9xl opacity-10">📦</div>
+            <h3 class="font-display font-bold text-xl mb-4 text-amber-900">🚨 EMERGENCY FOOD BOX</h3>
+            <p class="font-bold text-amber-700 mb-6 bg-amber-200/50 py-2 rounded-lg">OPEN ONLY WHEN YOU MISS HOME.</p>
+            <p class="text-amber-800/80 italic mb-6">"If you're reading this, you're probably hungry."</p>
+            
+            <div class="bg-white p-4 rounded-xl shadow-inner mb-6 text-left border border-amber-100">
+                <p class="text-sm font-semibold text-slate-400 mb-1">To:</p>
+                <p class="font-bold text-medical-dark mb-3">Georgia 🇬🇪</p>
+                <p class="text-sm font-semibold text-slate-400 mb-1">Contents:</p>
+                <p class="font-bold text-accent-red">Snack Box 🇮🇳❤️</p>
+            </div>
+            
+            <button class="modal-close-btn w-full bg-amber-800 text-white font-bold py-3 rounded-xl hover:bg-amber-900 transition-colors">
+                CLOSE BOX
+            </button>
+        </div>
+    </div>
+
+    <!-- Reset Confirmation Modal -->
+    <div id="reset-modal" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl transform scale-95 transition-transform duration-300 text-center">
+            <div class="text-5xl mb-4 text-accent-red">⚠️</div>
+            <h3 class="font-display font-bold text-xl mb-2 text-slate-800">Reset Checklist?</h3>
+            <p class="text-slate-500 mb-8">Are you sure you want to reset the entire mission? All your checked items will be cleared.</p>
+            
+            <div class="flex gap-4">
+                <button class="modal-close-btn flex-1 bg-slate-100 text-slate-600 font-bold py-3 rounded-xl hover:bg-slate-200 transition-colors">
+                    CANCEL
+                </button>
+                <button id="confirm-reset-btn" class="flex-1 bg-accent-red text-white font-bold py-3 rounded-xl hover:bg-red-600 transition-colors">
+                    RESET
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Verification Modal -->
+    <div id="verify-modal" class="fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl transform scale-95 transition-transform duration-300 text-center">
+            <h3 class="font-display font-bold text-3xl mb-4 text-medical-dark">WAIT.</h3>
+            
+            <div id="verify-step-1">
+                <p class="text-lg text-slate-600 mb-8">Are you 100% sure you didn't forget something?</p>
+                <button id="verify-btn-1" class="w-full bg-medical-blue text-white font-bold py-4 rounded-xl hover:bg-blue-600 transition-colors">
+                    YES, I'M SURE
+                </button>
+            </div>
+            
+            <div id="verify-step-2" class="hidden">
+                <p class="text-xl font-bold text-accent-red mb-8">🤨 ARE YOU REALLY SURE?</p>
+                <button id="verify-btn-2" class="w-full bg-accent-red text-white font-bold py-4 rounded-xl hover:bg-red-600 transition-colors">
+                    YES. REALLY.
+                </button>
+            </div>
+            
+            <div id="verify-step-3" class="hidden">
+                <p class="text-lg text-slate-600 mb-4">Check your passport again.</p>
+                <p class="font-display font-bold text-2xl text-medical-dark mb-8">Okay Doctor.<br>You're ready. ✈️🇬🇪</p>
+                <button class="modal-close-btn w-full bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-slate-900 transition-colors">
+                    MISSION COMPLETE ❤️
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Surprise Modal -->
+    <div id="secret-modal" class="fixed inset-0 z-[100] bg-accent-pink/90 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-white rounded-3xl p-8 md:p-12 max-w-lg w-full shadow-2xl transform scale-95 transition-transform duration-300 text-center relative">
+            <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 text-6xl animate-bounce">❤️</div>
+            <h3 class="font-display font-bold text-2xl md:text-3xl mb-6 text-accent-pink">One Last Thing...</h3>
+            <p class="text-lg text-slate-700 mb-6 leading-relaxed">
+                Even though you're going to Georgia for 4th year... <br>
+                don't forget the person who is going to miss you here. ❤️
+            </p>
+            <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100">
+                <p id="secret-message" class="font-display font-medium text-pink-900 text-lg italic">
+                    <!-- Injected via JS -->
+                </p>
+            </div>
+            <button class="modal-close-btn mt-8 bg-pink-100 text-pink-700 font-bold py-3 px-8 rounded-full hover:bg-pink-200 transition-colors">
+                I won't forget
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+        <span>💾</span> <span id="toast-msg">Progress saved locally.</span>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
